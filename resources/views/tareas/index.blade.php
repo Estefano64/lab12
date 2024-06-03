@@ -22,7 +22,7 @@
            </div>
            <div class="mb-4">
                <label for="completada" class="block text-sm font-medium text-gray-700">Estado:</label>
-               <select name="completada" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+               <select name="completed" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
                    <option value="">Todas</option>
                    <option value="1">Completadas</option>
                    <option value="0">No Completadas</option>
@@ -54,8 +54,8 @@
                        <form action="{{ route('tareas.toggle', $tarea) }}" method="POST" style="display:inline;">
                            @csrf
                            @method('PUT')
-                           <button type="submit" class="mr-2 px-4 py-2 {{ $tarea->completada ? 'bg-green-500' : 'bg-gray-500' }} text-white rounded-lg hover:bg-green-600">
-                               {{ $tarea->completada ? 'Completa' : 'Incompleta' }}
+                           <button type="submit" class="mr-2 px-4 py-2 {{ $tarea->completed ? 'bg-green-500' : 'bg-gray-500' }} text-white rounded-lg hover:bg-green-600">
+                           {{ $tarea->completed ? 'Completa' : 'Incompleta' }}
                            </button>
                        </form>
                        <form action="{{ route('tareas.destroy', $tarea) }}" method="POST" style="display:inline;">
